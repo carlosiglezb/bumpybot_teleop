@@ -1,0 +1,9 @@
+<library path="lib/libbumpybot_teleop">
+    <class name="bumpybot_teleop/Teleop"
+           type="bumpybot_wheel_teleop::WheelControlPad"
+           base_class_type="rviz::Panel">
+        <description>
+            A panel widget to control a wheel current through its ROS topic name.
+        </description>
+    </class>
+</library>

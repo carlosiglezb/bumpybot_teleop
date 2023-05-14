@@ -1,0 +1,9 @@
+<library path="lib/libbumpybot_teleop">
+    <class name="bumpybot_teleop/CmdVelTeleop"
+           type="bumpybot_teleop::TeleopPanel"
+           base_class_type="rviz::Panel">
+        <description>
+            A panel widget to control a twist through its ROS topic name.
+        </description>
+    </class>
+</library>
