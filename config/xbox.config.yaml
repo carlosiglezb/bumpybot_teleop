@@ -17,5 +17,5 @@ scale_angular:
 scale_angular_turbo:
   yaw: 0.5
 
-enable_button: 2  # Left trigger button
-enable_turbo_button: 5  # Right trigger button
+enable_button: 5  # Left trigger button
+enable_turbo_button: 4  # Right trigger button

@@ -6,6 +6,7 @@ project(bumpybot_teleop)
 
 find_package(catkin REQUIRED COMPONENTS
   roscpp
+  rospy
   rviz
   std_msgs
 )
