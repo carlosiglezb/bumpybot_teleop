@@ -11,10 +11,18 @@ class vel_smoother:
         self.linear, self.angular= zeros((3,1)), zeros((3,1))
     
     def lpf(self, v3_linear, v3_angular):
-        alpha = 0.01
         input_linear,input_angular = vector3_convertor(v3_linear),vector3_convertor(v3_angular)
-        new_linear = alpha*input_linear + (1-alpha)*self.linear
-        new_angular = alpha*input_angular + (1-alpha)*self.angular
+        alpha = [0,0]
+        if (input_linear==0).all() == True:
+            alpha[0] = 0.05
+        else:
+            alpha[0] = 0.005
+        if (input_angular==0).all() == True:
+            alpha[1] = 0.05
+        else:
+            alpha[1] = 0.01       
+        new_linear = alpha[0]*input_linear + (1-alpha[0])*self.linear
+        new_angular = alpha[1]*input_angular + (1-alpha[1])*self.angular
         out_linear, out_angular = Vector3(float(new_linear[0]),float(new_linear[1]),float(new_linear[2])), Vector3(float(new_angular[0]),float(new_angular[1]),float(new_angular[2]))
         self.linear, self.angular = new_linear, new_angular
         return  out_linear, out_angular
