@@ -16,7 +16,7 @@ class vel_smoother:
         if (input_linear==0).all() == True:
             alpha[0] = 0.009
         else:
-            alpha[0] = 0.002
+            alpha[0] = 0.001
         if (input_angular==0).all() == True:
             alpha[1] = 0.009
         else:
