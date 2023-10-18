@@ -14,12 +14,16 @@ class vel_smoother:
         input_linear,input_angular = vector3_convertor(v3_linear),vector3_convertor(v3_angular)
         alpha = [0,0]
         if (input_linear==0).all() == True:
+            # Linear Decceleration Smoothing
             alpha[0] = 0.01
         else:
+            # Linear Accleration Smoothing
             alpha[0] = 0.001
         if (input_angular==0).all() == True:
+            # Angular Decceleration Smoothing
             alpha[1] = 0.01
         else:
+            # Angular Acceleration Smoothing
             alpha[1] = 0.001      
         new_linear = alpha[0]*input_linear + (1-alpha[0])*self.linear
         new_angular = alpha[1]*input_angular + (1-alpha[1])*self.angular
