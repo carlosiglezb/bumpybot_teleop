@@ -15,13 +15,13 @@ class vel_smoother:
         alpha = [0,0]
         if (input_linear==0).all() == True:
             # Linear Decceleration Smoothing
-            alpha[0] = 0.005
+            alpha[0] = 0.003
         else:
             # Linear Accleration Smoothing
             alpha[0] = 0.001
         if (input_angular==0).all() == True:
             # Angular Decceleration Smoothing
-            alpha[1] = 0.005
+            alpha[1] = 0.003
         else:
             # Angular Acceleration Smoothing
             alpha[1] = 0.001      
